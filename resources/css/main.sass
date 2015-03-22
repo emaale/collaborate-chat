@@ -1,11 +1,20 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic)
+@import variables/variables
 @import mixins/mixins
 @import modules/modules
-@import colors/colors
 @import animations/animations
 
 body
 	background: #eeeeee
+	margin: 0
+
+	.bg-overlay
+		background: $primary-color
+		height: 200px
+		width: 100%
+		position: absolute
+		top: 0
+		z-index: -1
 
 body.login
 	padding: 20px
@@ -16,3 +25,9 @@ body.login
 	box-sizing: border-box
 	font-family: 'Roboto', sans-serif
 	font-weight: 400
+
+::-webkit-scrollbar 
+	width: 6px
+ 
+::-webkit-scrollbar-thumb
+	background: $divider-color
