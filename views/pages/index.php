@@ -113,13 +113,19 @@
 					
 				</div>
 
-				<input type="text" class="message-bubble" placeholder="Type here...">
+				<textarea class="message-bubble" placeholder="Type here..."></textarea>
 
 				<div class="right-options">
 					
 				</div>
 			</footer>
 		</section>
-	</section>	
+	</section>
+
+	<div class="notification">
+		<span class="description">User deleted</span>
+
+		<a href="#" class="action">UNDO</a>
+	</div>
 </body>
 </html>
