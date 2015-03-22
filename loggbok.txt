@@ -1,0 +1,11 @@
+2015-03-22 
+	01:10
+	Setting up grunt with SASS autocompile, and folder structure is finished
+
+	03:06
+	SASS folder structure started, and I will begin the design process by designing each separate modules
+
+	03:27
+	Login page is designed, and can be implemented
+
+	

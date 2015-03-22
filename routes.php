@@ -4,6 +4,10 @@
  * Description: Defines all routes
  */
 
+Route::get('/', function() {
+	return View::make('pages/index');
+});
+
 # Available routes for authenticated users
 if(Session::get("user")) {
 

@@ -3,13 +3,13 @@
 <head>
 	<title>Login Page</title>
 
-	<link rel="stylesheet" href="resources/css/login.css">
+	<link rel="stylesheet" href="resources/css/main.css">
 
 	<script src="resources/js/jquery.min.js"></script>
 	<script src="resources/js/login.js"></script>
 </head>
-<body>
-	<section class="form-wrapper">
+<body class="login">
+	<section class="login-wrapper">
 		<h1>Login</h1>
 
 		<form action="/user/login" method="POST" id="login-form">
