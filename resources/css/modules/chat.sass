@@ -1,35 +1,112 @@
 .chat-wrapper
-	max-width: 960px
+	max-width: 1080px
 	height: $chat-height
 	margin: 80px auto
-	background: white
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
 	border-radius: 3px
+	
+	@media screen and (max-width: 850px)
+		height: 100%
+		width: 100%
+		margin: 0
+		padding: 0
 
 	.friendlist
-		width: 30%
+		width: 33%
 		height: 100%
 		float: left
-		border-right: 1px solid $divider-color
+		background: white
+		overflow: hidden
+		position: relative
+		
+		@media screen and (max-width: 850px)
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			float: none
+			width: 100%
+			height: 100%
 
 		header
-			background: $light-primary-color
+			background: $primary-color
 			height: $chat-bar-height
 			width: 100%
-			border-top-left-radius: 3px
+			padding: 10px 10px
+			color: $icon-color
+			border-right: 1px solid darken($primary-color, 15%)
+			
+			@media screen and (max-width: 850px)
+				background: $primary-color
+				border-bottom: none
+			
+			span
+				font-size: 28px
+				float: left
 
-			img
-				width: 40px
-				height: 40px
-				margin: 5px 0 0 5px
-				border-radius: 50%
+			.search-btn
+				
 
-			.name
+			.search-bar
+				border: 0
+				border-bottom: 2px solid $icon-color
+				background: none
+				color: $icon-color
+				font-weight: 400
+				height: 30px
+				margin-left: 5px
+				display: none
 
+				&:focus
+					outline: 0
+
+			.dropdown
+				float: right
+
+				.current-option
+					font-size: 18px
+					padding-top: 4px
+					font-weight: 400
+
+			.menu-btn
+				float: right
+
+		nav
+			height: $chat-bar-height
+			width: 100%
+			background: white
+			border-right: 1px solid $divider-color
+
+			a 
+				width: 33.3%
+				border-right: 1px solid $divider-color
+				display: block
+				float: left
+				height: 100%
+				text-decoration: none
+				text-align: center
+				padding-top: 15px
+				border-bottom: 1px solid $divider-color
+				
+				&:last-of-type
+					border-right: none
+				
+				&.active
+					border-bottom: 3px solid $accent-color
+				
+				&:hover
+					background: darken(white, 7%)
+
+				span
+					color: darken($secondary-text-color, 5%)
+					font-size: 24px
 
 		section
 			height: calc(#{$chat-height} - #{$chat-bar-height})
 			width: 100%
+			border-right: 1px solid $divider-color
+			background: #E8E8E8
 			
 			a
 				text-decoration: none
@@ -39,44 +116,160 @@
 					padding: 10px 15px
 					border-bottom: 1px solid $divider-color
 					text-decoration: none
+					height: 70px
+					background: white
+					overflow: hidden
 
 					img
 						width: 50px
 						height: 50px
 						border-radius: 50%
+						float: left
+					
+					.information-container
+						float: left
+						width: calc(100% - 50px)
+						padding-left: 10px
+						position: relative
 
-					.name
+						.name
+							display: block
 
+							.favorite
+								color: $secondary-text-color
 
-					.date
-						font-weight: 700
+								&.icon-star-outline
+									display: none
 
-					.last-message
+						.online-status
+							position: absolute
+							top: 0
+							right: 0
+							font-size: 10px
 
-					&.active, &:hover
-						background: #ccc
-						cursor: pointer
+							&.online
+								color: #27ae60
+
+							&.offline
+								color: #e74c3c
+
+						.date
+							width: 100px
+							display: inline-block
+							font-weight: 400
+							float: right
+							margin-top: 10px
+							text-align: right
+							font-size: 13px
+
+						.last-message
+							width: calc(100% - 100px)
+							display: inline-block
+							margin-top: 10px
+							float: left
+							overflow: hidden
+							height: 1.1em
+							font-size: 13px
+
+							&.unread
+								font-weight: 400
+
+					&.active
+						border-left: 3px solid $accent-color
+						padding-left: 11px
+
+					&:hover
+						background: darken(white, 7%)
+					
+					/* Displays the star when the article is hovered */
+					&:hover .information-container .name .favorite
+						display: inline
+
+		.add-btn
+			background: $accent-color
+			color: $icon-color
+			padding: 9px 14px
+			border-radius: 50%
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+			position: absolute
+			bottom: 10px
+			right: 10px
+			text-decoration: none
+			font-size: 28px
+
+			span
+				display: inline-block
+				margin-top: 5px
 
 	.chat
-		width: 70%
+		width: 67%
 		height: 100%
 		float: right
 
+		@media screen and (max-width: 850px)
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			float: none
+			width: 100%
+			height: 100%
+			z-index: -1
+
 		header
 			height: $chat-bar-height
-			background: $light-primary-color
-			box-shadow: 0 1px 2px rgba(0,0,0,0.12)
+			background: $primary-color
+			padding: 5px 10px
+			color: $icon-color
+
+			@media screen and (max-width: 850px)
+				background: $primary-color
+				border-bottom: none
+			
+			span
+				font-size: 28px
 
 			.details
+				float: left
+				
+				*
+					float: left
+
+				img
+					width: 40px
+					height: 40px
+					border-radius: 50%
+
+				.name
+					font-size: 18px
+					margin-left: 10px
+					padding-top: 10px
+					font-weight: 400
 
 			.options
+				float: right
+				padding-top: 5px
 
+				*
+					float: left
+
+				.dropdown
+
+					.current-option
+						font-size: 18px
+						padding-top: 4px
+						font-weight: 400
 
 		section
 			height: $chat-height - 2 * $chat-bar-height
-			background: #E3E3E3
+			background: #E8E8E8
 			padding: 20px
 			overflow: auto
+			clear: both
+
+			@media screen and (max-width: 850px)
+				height: calc(100% - 2 * #{$chat-bar-height})
 			
 			.bubble-wrapper
 				margin-bottom: 20px
@@ -97,8 +290,11 @@
 						min-width: 100px
 
 					&.formatted-text
-						max-width: 100%
+						max-width: 550px
 						padding: 20px 30px
+						
+						*
+							font-weight: 300
 
 						img
 							max-width: 350px
@@ -128,6 +324,9 @@
 							li 
 								margin-bottom: 10px
 
+						p 
+							
+
 					&.image
 						max-width: 360px
 						padding: 10px
@@ -138,17 +337,30 @@
 		footer
 			height: $chat-bar-height
 			box-shadow: 0 -1px 2px rgba(0,0,0,0.12)
+			background: white
 
+			*
+				float: left
+				height: 100%
+				
 			.left-options
 				width: $chat-footer-options-width
 				border-right: 1px solid $divider-color
+				
+				.smiley-btn
+					font-size: 28px
+					padding: 12px 15px
+					color: $secondary-text-color
+
+					&:hover
+						color: $accent-color
 
 			.message-bubble
-				padding: 10px 15px
+				padding: 15px 15px
 				border: 0
 				width: calc(100% - 2 * #{$chat-footer-options-width})
 				resize: none
-
+				font-size: 16px
 
 				&:focus
 					outline: 0
@@ -157,6 +369,10 @@
 				width: $chat-footer-options-width
 				border-left: 1px solid $divider-color
 
-			*
-				float: left
-				height: 100%
+				.attachment-btn
+					font-size: 28px
+					padding: 12px 15px
+					color: $secondary-text-color
+
+					&:hover
+						color: $accent-color

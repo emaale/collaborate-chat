@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Login Page</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="resources/css/main.css">
 
@@ -15,22 +17,82 @@
 	<!-- The chat wrapper, that wraps all chat related things -->
 	<section class="chat-wrapper">
 		<aside class="friendlist">
-			<header>
-				<img src="resources/images/137H.jpg" alt="">
+			<!-- Button to add user/group -->
+			<a href="#" class="add-btn">
+				<span class="icon-add"></span>
+			</a>
 
-				<span class="name">Emanuel Alenius</span>
+			<header>
+				<span class="search-btn icon-search"></span>
+				<input type="text" class="search-bar">
+
+				<span class="menu-btn icon-more-vert"></span>
+
+				<div class="dropdown">
+					<span class="current-option">All</span>
+					<span class="icon-arrow-drop-down"></span>
+				</div>
 			</header>
+
+			<nav>
+				<a href="#" class="active"><span class="icon-person"></span></a>
+				<a href="#"><span class="icon-group"></span></a>
+				<a href="#"><span class="icon-notifications"></span></a>
+			</nav>
 
 			<section>
 				<a href="#">
 					<article>
 						<img src="resources/images/137H.jpg" alt="">
+						
+						<div class="information-container">
+							<span class="name">
+								Emanuel Alenius
+								<span class="favorite icon-star"></span>
+							</span>
 
-						<span class="name">Emanuel Alenius</span>
+							<span class="online-status online icon-lens"></span>
 
-						<span class="date">2015-03-03</span>
+							<span class="last-message">Hello man how was it...</span>
 
-						<span class="last-message">Hello man how was it goin...</span>
+							<span class="date">15 Jan</span>
+						</div>
+					</article>
+				</a>
+				<a href="#">
+					<article class="active">
+						<img src="resources/images/137H.jpg" alt="">
+						
+						<div class="information-container">
+							<span class="name">
+								Test Alenius
+								<span class="favorite icon-star-outline"></span>
+							</span>
+
+							<span class="online-status online icon-lens"></span>
+
+							<span class="last-message unread">Hello man how was it...</span>
+
+							<span class="date">15 Jan</span>
+						</div>
+					</article>
+				</a>
+				<a href="#">
+					<article>
+						<img src="resources/images/137H.jpg" alt="">
+						
+						<div class="information-container">
+							<span class="name">
+								Offline User
+								<span class="favorite icon-star-outline"></span>
+							</span>
+
+							<span class="online-status offline icon-lens"></span>
+
+							<span class="last-message">Hello man how was it...</span>
+
+							<span class="date">15 Jan</span>
+						</div>
 					</article>
 				</a>
 			</section>
@@ -38,7 +100,20 @@
 
 		<section class="chat">
 			<header>
+				<div class="details">
+					<img src="resources/images/137H.jpg" alt="">
+
+					<span class="name">Emanuel Alenius</span>
+				</div>
 				
+				<div class="options">
+					<div class="dropdown">
+						<span class="current-option">All</span>
+						<span class="icon-arrow-drop-down"></span>
+					</div>
+
+					<span class="menu icon-more-vert"></span>
+				</div>
 			</header>
 
 			<section>
@@ -110,13 +185,17 @@
 
 			<footer>
 				<div class="left-options">
-					
+					<a href="#">
+						<span class="smiley-btn icon-keyboard-alt"></span>	
+					</a>
 				</div>
 
 				<textarea class="message-bubble" placeholder="Type here..."></textarea>
 
 				<div class="right-options">
-					
+					<a href="#">
+						<span class="attachment-btn icon-attach-file"></span>
+					</a>
 				</div>
 			</footer>
 		</section>
